@@ -1,5 +1,4 @@
-#include <unistd.h>
-#include <stdio.h>
+#include "includes.h"
 
 void gd_putnbr(int nb) {
     if (nb < 0) {
@@ -10,8 +9,8 @@ void gd_putnbr(int nb) {
         gd_putnbr(nb / 10);
         gd_putnbr(nb % 10);
     }
-    /else{
-        putchar(nb + '0')
+    else{
+        putchar(nb + '0');
     }
 }
 

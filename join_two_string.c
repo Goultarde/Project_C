@@ -1,5 +1,5 @@
-#include <stdlib.h>
-#include <stdio.h>
+#include "includes.h"
+
 char *join_two_string(char const *s1, char const *s2){
     /*
     Connaitre la longeur totale de ma chaine retourné (longeur de s1 + logneur de s2 +1(pour le \0))

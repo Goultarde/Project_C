@@ -1,5 +1,12 @@
 #include "includes.h"
+int comp(const void *a, const void *b) {
+        a = *(const int *) a;
+        b = *(const int *) b;
+        return a-b;
+}
 int main(void){
+    type_lst *lst;
+    type_lst *lst_temp;
     /*
     1/ Trier array_int avec qsort ou avec un tri à bulle 
         un tri à bulle
@@ -11,16 +18,19 @@ int main(void){
     5/ Bonus si bouclé, le dernier pointe 
         sur le premier et inversement.
     */
-    int comp(const void *a, const void *b) {
-        a = *(const int *) a;
-        b = *(const int *) b;
-        return a-b;
-    }
+    
     int array_int[5] = {5,6,4,2,1};
     int i = 0;
     // 1/ 
     int size = sizeof(array_int)/sizeof(int);
     qsort(array_int, size, sizeof(int), comp);
+
+    type_lst *lst_1;
+    type_lst *lst_2;
+    type_lst *lst_3;
+    type_lst *lst_4;
+    type_lst *lst_5;
+
 
 
 
@@ -30,6 +40,8 @@ int main(void){
     }
     while(lst){
         print("le nbr = %i\n", lst->nbr);
-        lst = lst->next;
+        lst_temp = lst->next;
+        free(lst);
+        lst = lst_temp;
     }
 }

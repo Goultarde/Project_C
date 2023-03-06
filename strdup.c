@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+// #include <includes.h>
 
 int gd_strlen(const char *str){
     int len = 0;
