@@ -1,4 +1,5 @@
-#include "includes.h"
+#include <unistd.h>
+#include <stdio.h>
 
 void gd_putnbr(int nb) {
     if (nb < 0) {

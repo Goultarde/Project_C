@@ -1,4 +1,4 @@
-#include "includes.h";
+#include "includes.h"
 int main(int argc, char **argv){
     /* 
     je veut alouer 9 case et 9 colonnes
@@ -27,12 +27,14 @@ int main(int argc, char **argv){
     // [1,2,3,4,5,6,7,8,9],
     // [1,2,3,4,5,6,7,8,9]
     // ]
-    char buff[100];
+    char buff[81+8];
+    // int fd = open("sudoku.txt", O_RDONLY);
     int fd = open(argv[argc-1], O_RDONLY);
-    
-    
+    read(fd, buff,81+8);
+    buff[89] = '\0';
+    printf("%s\n", buff);
 
-    printf("%d", board);
+    // printf("%d", board);
     i=0;
     while(i<9){
         free(board[i]);
