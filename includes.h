@@ -6,6 +6,7 @@
 # include <unistd.h>
 # include <sys/types.h>
 # include <sys/stat.h>
+#include <fcntl.h>
 
 typedef struct my_struct{
     int minutes;
