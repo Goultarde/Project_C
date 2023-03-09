@@ -1,6 +1,6 @@
 #include "../includes.h"
 
-int teste_colonne(int **bord, int line, int value){
+int teste_line(int **bord, int line, int value){
     int i = 0;
     while (i<9){
         if (bord[line][i] == value){
@@ -12,7 +12,7 @@ int teste_colonne(int **bord, int line, int value){
 
 }
 
-int teste_ligne(int **bord, int line, int value){
+int teste_col(int **bord, int line, int value){
     int i = 0;
     while (i<9){
         if (bord[i][line] == value){
@@ -26,12 +26,21 @@ int teste_ligne(int **bord, int line, int value){
 
 int teste_case(int **bord, int line, int value){
     int i = 0;
-    while (i<9){
+    int a = 0;
+    while (i<3){
         if (bord[line][i] == value){
-            return 0;
+            a++;
+        }
+        if (bord[i][line] == value){
+            a++;
         }
         i++;
     }
+    if (bord[line][line] == value){
+            a++
+        }
+
+    
     return 1;
 
 }
