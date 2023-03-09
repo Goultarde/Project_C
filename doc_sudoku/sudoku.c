@@ -1,4 +1,30 @@
-#include "includes.h"
+#include "../includes.h"
+
+int verificaiton_horizontal(int **bord, int line, int nb_line){
+    int i;
+    while (i<8){
+        if(bord[i][line] == nb_line){
+            return 1;
+        }
+        i++;
+    }
+    return 0;
+}
+
+#include "../includes.h"
+
+int verificaiton_verticale(int **bord, int line, int nb_line){
+    int i;
+    while (i<8){
+        if(bord[line][i] == nb_line){
+            return 1;
+        }
+        i++;
+    }
+    return 0;
+}
+
+
 int main(int argc, char **argv){
     /* 
     je veut alouer 9 case et 9 colonnes
@@ -33,7 +59,7 @@ int main(int argc, char **argv){
     // [1,2,3,4,5,6,7,8,9]
     // ];
     char buff[81+8];
-    int fd = open(argv [argc-1], O_RDONLY);
+    int fd = open(argv[argc-1], O_RDONLY);
     read(fd, buff,81+8);
     buff[89] = '\0';
     // printf("%s\n", buff);
