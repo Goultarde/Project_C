@@ -1,29 +1,40 @@
 #include "../includes.h"
 
-int verificaiton_horizontal(int **bord, int line, int nb_line){
-    int i;
-    while (i<8){
-        if(bord[i][line] == nb_line){
-            return 1;
+int teste_colonne(int **bord, int line, int value){
+    int i = 0;
+    while (i<9){
+        if (bord[line][i] == value){
+            return 0;
         }
         i++;
     }
-    return 0;
+    return 1;
+
 }
 
-#include "../includes.h"
-
-int verificaiton_verticale(int **bord, int line, int nb_line){
-    int i;
-    while (i<8){
-        if(bord[line][i] == nb_line){
-            return 1;
+int teste_ligne(int **bord, int line, int value){
+    int i = 0;
+    while (i<9){
+        if (bord[i][line] == value){
+            return 0;
         }
         i++;
     }
-    return 0;
+    return 1;
+
 }
 
+int teste_case(int **bord, int line, int value){
+    int i = 0;
+    while (i<9){
+        if (bord[line][i] == value){
+            return 0;
+        }
+        i++;
+    }
+    return 1;
+
+}
 
 int main(int argc, char **argv){
     /* 
@@ -59,7 +70,7 @@ int main(int argc, char **argv){
     // [1,2,3,4,5,6,7,8,9]
     // ];
     char buff[81+8];
-    int fd = open(argv[argc-1], O_RDONLY);
+    int fd = open(argv [argc-1], O_RDONLY);
     read(fd, buff,81+8);
     buff[89] = '\0';
     // printf("%s\n", buff);
