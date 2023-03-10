@@ -4,7 +4,7 @@ int try_line(int **bord, int line, int value){
     int i = 0;
     while (i<9){
         if (bord[line][i] == value){
-            return 0;
+            return false;
         }
         i++;
     }
@@ -16,11 +16,11 @@ int try_col(int **bord, int col, int value){
     int i = 0;
     while (i<9){
         if (bord[i][col] == value){
-            return 0;
+            return false;
         }
         i++;
     }
-    return 1;
+    return true;
 
 }
 
@@ -30,6 +30,7 @@ int try_case(int **bord, int test, int value){
 
         }
     }
+    return false;
 
 }
 
