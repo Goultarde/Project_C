@@ -1,6 +1,7 @@
 #include "../includes.h"
 
 int try_line(int **bord, int line, int value){
+    /*Cette fonction va permetre de vérifier les lignes du sudoku*/
     int i = 0;
     while (i<9){
         if (bord[line][i] == value){
@@ -13,6 +14,7 @@ int try_line(int **bord, int line, int value){
 }
 
 int try_col(int **bord, int col, int value){
+    /*Cette fonction va permetre de vérifier les colone du sudoku*/
     int i = 0;
     while (i<9){
         if (bord[i][col] == value){
@@ -25,6 +27,7 @@ int try_col(int **bord, int col, int value){
 }
 
 int try_case(int **bord, int test, int value){
+    /*Cette fonction va permetre de vérifier les case du sudoku*/
     if (try_col(bord,test,value)){
         if(try_line(bord,test,value)){
 
@@ -36,8 +39,9 @@ int try_case(int **bord, int test, int value){
 
 int main(int argc, char **argv){
     /* 
-    je veut alouer 9 case et 9 colonnes
-    Il faudra a la fin libérer l'espace alouer
+    j'aloue de l'espace dans la mémoire pour 9 case et 9 colonnes
+    Je remplie le tableau via un fichier txt puis je l'affiche
+    A la fin je libère l'espace alouer
     */ 
     int **board;
     board  = (int **)malloc(9 * sizeof(int *));
@@ -50,23 +54,8 @@ int main(int argc, char **argv){
         board[i] = (int *)malloc(9*sizeof(int));
         i++;
     }
-    // int x,y,z=0;
-    // for(x = 0; x<9;i++){
-    //     z++;
-    //     for(y = 0; y<9;){
-    //         board[x][y] = z;
-    //     }
-    // }
-    // [[1,2,3,4,5,6,7,8,9],
-    // [1,2,3,4,5,6,7,8,9],
-    // [1,2,3,4,5,6,7,8,9],
-    // [1,2,3,4,5,6,7,8,9],
-    // [1,2,3,4,5,6,7,8,9],
-    // [1,2,3,4,5,6,7,8,9],
-    // [1,2,3,4,5,6,7,8,9],
-    // [1,2,3,4,5,6,7,8,9],
-    // [1,2,3,4,5,6,7,8,9]
-    // ];
+
+
     char buff[81+8];
     int fd = open(argv [argc-1], O_RDONLY);
     read(fd, buff,81+8);
