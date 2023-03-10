@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "../includes.h"
 
 int fibonacci(int max_fib){
     int result;

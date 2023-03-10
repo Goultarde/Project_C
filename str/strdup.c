@@ -1,5 +1,4 @@
-#include <stdlib.h>
-#include <stdio.h>
+#include "../includes.h"
 // #include <includes.h>
 
 int gd_strlen(const char *str){
@@ -14,7 +13,7 @@ char *gd_strdup(const char *src){
     int len_src;
     char *ret;
 
-    len_src = gd_srclen(src);
+    len_src = gd_strlen(src);
     ret = (char *)malloc(sizeof(char) * (len_src +1));
     if (ret == NULL){
         return NULL;
